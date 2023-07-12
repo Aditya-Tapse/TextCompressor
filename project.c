@@ -332,7 +332,7 @@ int DecodeData()
     }
     for (int i = 0, power = 1000; i < 4; i++, power /= 10)
     {
-        sz2 + (fgetc(FIN) - '0') * (power);
+        sz2 += (fgetc(FIN) - '0') * (power);
     }
     int numberOfNewLine = 0;
     int i = 8, j = 0;
@@ -353,7 +353,7 @@ int DecodeData()
     while (j < sz2)
     {
         fseek(FIN, 1, SEEK_SET);
-        c - fgetc(FIN);
+        c = fgetc(FIN);
         if (c == -1)
             c = 26;
         char bin[8];
@@ -522,7 +522,7 @@ void createFreqArray()
     }
     character = (char *) malloc(diffCharacters * sizeof(char));
     freq=(int *) malloc(diffCharacters *sizeof(int));
-    * codes = malloc(sizeof(char[diffCharacters][40]));
+    //codes = malloc(sizeof(char[diffCharacters][40]));
     for (int i = 0, j = 0; i < 128; i++)
     {
         if (cnt[i] >= 1)
