@@ -1,5 +1,5 @@
 #include <iostream>
-#include "huffman.hpp"
+#include "huffman.cpp"
 using namespace std;
 
 int main(int argc, char* argv[]) {
